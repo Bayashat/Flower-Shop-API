@@ -44,7 +44,7 @@ class FlowersRepository:
         if db_flower is None:
             raise HTTPException(status_code=404, detail="Flower not found")
         
-        for key, value in flower_data.dict(exclude_unset=True).items():
+        for key, value in flower_data.model_dump(exclude_unset=True).items():
             setattr(db_flower, key, value)
             
         try:
