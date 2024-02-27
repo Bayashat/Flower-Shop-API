@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.models.flower import FlowerRequest, FlowerResponse, PatchFlowerRequest
 from app.db.repositories import FlowersRepository
-from app.api.auth import oath2_scheme, get_db
+from .auth import oath2_scheme, get_db
 
 
 router = APIRouter()

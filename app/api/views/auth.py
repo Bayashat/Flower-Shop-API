@@ -10,7 +10,6 @@ from app.db.database import SessionLocal
 from app.db.models import User
 from app.models.user import ProfileResponse
 from app.db.repositories import UsersRepository
-from app.utils import save_avatar
 
 router = APIRouter()
 users_repository = UsersRepository()

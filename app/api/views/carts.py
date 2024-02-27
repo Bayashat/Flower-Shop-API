@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from app.models.cart import CartItemInput, CartItemsResponse
 from app.db.models import Flower
 from app.db.repositories import FlowersRepository, CartRepository
-from app.api.auth import oath2_scheme, get_db, decode_jwt
+from .auth import oath2_scheme, get_db, decode_jwt
 
 
 router = APIRouter()

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.models.purchase import PurchaseResponse
 from app.db.repositories import FlowersRepository, CartRepository, PurchasesRepository
-from app.api.auth import oath2_scheme, get_db, decode_jwt
+from .auth import oath2_scheme, get_db, decode_jwt
 
 
 router = APIRouter()
