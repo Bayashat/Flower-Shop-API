@@ -9,7 +9,8 @@ from app.db.models import User
 
 
 class UsersRepository:
-    def create_user(self, db: Session, user: UserCreate) -> int:
+    @staticmethod
+    def create_user(db: Session, user: UserCreate) -> int:
         try: 
             # Try to query if the user already exists
             existing_user = db.query(User).filter(User.email == user.email).first()
@@ -27,14 +28,16 @@ class UsersRepository:
         
         return user.id
 
-    def get_by_email(self, db: Session, email: str) -> User:
+    @staticmethod
+    def get_by_email(db: Session, email: str) -> User:
         db_user = db.query(User).filter(User.email == email).first()
         if db_user:
             return db_user
         else:
             raise HTTPException(status_code=404, detail="User not found")
 
-    def get_by_id(self, db: Session, id: int) -> User:
+    @staticmethod
+    def get_by_id(db: Session, id: int) -> User:
         db_user = db.query(User).filter(User.id == id).first()
         if db_user:
             return db_user

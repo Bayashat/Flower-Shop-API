@@ -5,18 +5,17 @@ from sqlalchemy.orm import Session
 
 from app.db.models import Purchase
 
-class PurchasesRepository:        
-    def get_user_purchases(self, db: Session, user_id: int) -> List[Purchase.flower_id]:
+class PurchasesRepository: 
+    @staticmethod    
+    def get_user_purchases(db: Session, user_id: int) -> List[Purchase.flower_id]:
         try:
             purchases = db.query(Purchase).filter(Purchase.user_id == user_id).all()
             return [purchase.flower_id for purchase in purchases]
         except Exception as e:
             raise HTTPException(500, "Failed to fetch user purchases.")
         
-        
-        
-        
-    def add_purchases(self, db: Session, user_id: int, flower_ids: List[int]):
+    @staticmethod
+    def add_purchases(db: Session, user_id: int, flower_ids: List[int]):
         try:
             if not flower_ids:
                 raise HTTPException(400, "No flowers selected.")
