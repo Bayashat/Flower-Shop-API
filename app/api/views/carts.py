@@ -3,9 +3,10 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from app.models.cart import CartItemInput, CartItemsResponse
+from app.api.serializers.cart import CartItemInput, CartItemsResponse
 from app.db.models import Flower
-from app.db.repositories import FlowersRepository, CartRepository
+from app.api.repositories.flowers import FlowersRepository
+from app.api.repositories.carts import CartRepository
 from .auth import oath2_scheme, get_db, decode_jwt
 
 

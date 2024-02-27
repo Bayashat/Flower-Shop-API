@@ -8,8 +8,8 @@ from pydantic import EmailStr
 
 from app.db.database import SessionLocal
 from app.db.models import User
-from app.models.user import ProfileResponse
-from app.db.repositories import UsersRepository
+from app.api.serializers.user import ProfileResponse
+from app.api.repositories.users import UsersRepository
 
 router = APIRouter()
 users_repository = UsersRepository()

@@ -7,8 +7,8 @@ from io import BytesIO
 from base64 import b64encode
 
 from sqlalchemy.orm import Session
-from app.models.user import ProfileResponse
-from app.db.repositories import UsersRepository
+from app.api.serializers.user import ProfileResponse
+from app.api.repositories.users import UsersRepository
 from .auth import decode_jwt, get_db
 
 router = APIRouter()

@@ -3,8 +3,8 @@ from typing import List
 
 from sqlalchemy.orm import Session
 
-from app.models.flower import FlowerRequest, FlowerResponse, PatchFlowerRequest
-from app.db.repositories import FlowersRepository
+from app.api.serializers.flower import FlowerRequest, FlowerResponse, PatchFlowerRequest
+from app.api.repositories.flowers import FlowersRepository
 from .auth import oath2_scheme, get_db
 
 

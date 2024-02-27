@@ -32,8 +32,8 @@ class Purchase(Base):
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, autoincrement=True, index=True)
-    email = Column(String, unique=True, primary_key=True, index=True, nullable=False)
+    id = Column(Integer, autoincrement=True, index=True, primary_key=True)
+    email = Column(String, unique=True, index=True, nullable=False)
     full_name = Column(String, nullable=False)
     password = Column(String, nullable=False)
     photo = Column(LargeBinary, nullable=True)
