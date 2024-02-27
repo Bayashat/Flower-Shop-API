@@ -5,7 +5,7 @@
 : "${VARIABLE_NAME:=app}"
 : "${APP_MODULE:=$MODULE_NAME:$VARIABLE_NAME}"
 : "${HOST:=0.0.0.0}"
-: "${PORT:=8080}"
+: "${PORT:=8000}"
 : "${LOG_LEVEL:=info}"
 : "${LOG_CONFIG:=./deploy/configs/logging_uvicorn.ini}"
 
