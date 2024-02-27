@@ -83,9 +83,7 @@ docker build -t flower-shop-api .
 Run the Docker container:
 
 ```bash
-```bash
 docker run -p 8080:8080 -e PORT=8080 flower-shop-api
-```
 ```
 The API will be available at http://0.0.0.0:8080.
 
