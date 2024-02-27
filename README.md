@@ -77,15 +77,17 @@ The API will be available at http://127.0.0.1:8000.
 ## Docker
 Build the Docker image:
 ```bash
-docker build -t fastflowers-api .
+docker build -t flower-shop-api .
 ```
 
 Run the Docker container:
 
 ```bash
-docker run -p 8000:80 fastflowers-api
+```bash
+docker run -p 8080:8080 -e PORT=8080 flower-shop-api
 ```
-The API will be available at http://127.0.0.1:8000.
+```
+The API will be available at http://0.0.0.0:8080.
 
 ## Author
 Tokmukamet Bayashat
