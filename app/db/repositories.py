@@ -36,8 +36,6 @@ class UsersRepository:
         if db_user:
             return db_user
         else:
-            print(1111)
-            print(db_user.email)
             raise HTTPException(status_code=404, detail="User not found")
 
     def get_by_id(self, db: Session, id: int) -> User:
