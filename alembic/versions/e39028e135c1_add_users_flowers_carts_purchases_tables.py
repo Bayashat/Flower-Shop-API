@@ -1,8 +1,8 @@
-"""add: users table
+"""add: users, flowers, carts, purchases tables
 
-Revision ID: 704d315eb456
+Revision ID: e39028e135c1
 Revises: 
-Create Date: 2024-02-27 20:18:19.233915
+Create Date: 2024-02-27 20:44:14.768735
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '704d315eb456'
+revision: str = 'e39028e135c1'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -29,12 +29,12 @@ def upgrade() -> None:
     )
     op.create_index(op.f('ix_flowers_id'), 'flowers', ['id'], unique=False)
     op.create_table('users',
-    sa.Column('id', sa.Integer(), autoincrement=True, nullable=True),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('email', sa.String(), nullable=False),
     sa.Column('full_name', sa.String(), nullable=False),
     sa.Column('password', sa.String(), nullable=False),
     sa.Column('photo', sa.LargeBinary(), nullable=True),
-    sa.PrimaryKeyConstraint('email')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_users_email'), 'users', ['email'], unique=True)
     op.create_index(op.f('ix_users_id'), 'users', ['id'], unique=False)
