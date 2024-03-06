@@ -1,10 +1,8 @@
-from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI, templating
 
 from app.api.views import auth, carts, flowers, purchases, users
 
 app = FastAPI()
-templates = templating.Jinja2Templates("templates")
 
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
